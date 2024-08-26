@@ -10,13 +10,42 @@
 </head>
 <body>
   <header>
-    <h1>Welcome to Vibe Match</h1>
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Search', new_search_path %>
-      <%= link_to 'Playlists', playlists_path %>
-      <%= link_to 'Login with Spotify', '/auth/spotify' %> <!-- Add login link if using Spotify auth -->
-    </nav>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-body-tertiary">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#">VibeMatch</a>
+    <button
+      data-mdb-collapse-init
+      class="navbar-toggler"
+      type="button"
+      data-mdb-target="#navbarNav"
+      aria-controls="navbarNav"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <i class="fas fa-bars"></i>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link active" aria-current="page" href="#">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Pricing</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled"
+            >Disabled</a
+          >
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+    <!-- Navbar -->
   </header>
 
   <main>
@@ -29,7 +58,7 @@
       <h2>Get Started</h2>
       <%= form_with url: new_search_path, method: :get, local: true do %>
         <%= label_tag :song, 'Enter a Song:' %>
-        <%= text_field_tag :song, nil, placeholder: 'e.g., Shape of You' %>
+        <%= text_field_tag :song, nil, placeholder: 'e.g., Come as you are' %>
         <%= submit_tag 'Generate Playlist' %>
       <% end %>
     </section>

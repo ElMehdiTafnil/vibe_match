@@ -9,7 +9,20 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'mdb_init', 'data-turbolinks-track': 'reload' %>
   </head>
+
+  <nav>
+  <%= link_to 'Home', root_path %>
+  <% if user_signed_in? %>
+    <%= link_to 'Log out', destroy_user_session_path, method: :delete %>
+  <% else %>
+    <%= link_to 'Sign up', new_user_registration_path %>
+    <%= link_to 'Log in', new_user_session_path %>
+  <% end %>
+</nav>
+
 
   <body>
     <%= yield %>

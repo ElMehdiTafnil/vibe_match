@@ -1,10 +1,25 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  # Root route
+  root 'home#index'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  # Routes for the home controller
+  get 'home/index'
 
-  # Defines the root path route ("/")
-  # root "posts#index"
+  # Routes for Spotify callbacks
+  get 'callbacks/spotify'
+
+  # RESTful routes for playlists
+  resources :playlists, only: [:index, :show, :create, :destroy]
+
+  # RESTful routes for search
+  get 'search', to: 'search#new', as: 'new_search'
+  post 'search', to: 'search#create', as: 'search_results'
+
+  # Routes for users
+  get 'users/show'
+  get 'users/edit'
+  patch 'users/update'  # Typically use patch for updates
+
+  # Health check route
+  get 'up' => 'rails/health#show', as: :rails_health_check
 end

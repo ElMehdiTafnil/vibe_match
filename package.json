@@ -5,7 +5,9 @@
     "build": "esbuild app/javascript/*.* --bundle --sourcemap --format=esm --outdir=app/assets/builds --public-path=/assets"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^8.0.5",
     "@rails/webpacker": "5.4.4",
+    "esbuild": "^0.23.1",
     "mdb-ui-kit": "^7.3.2",
     "webpack": "^4.46.0",
     "webpack-cli": "^3.3.12"

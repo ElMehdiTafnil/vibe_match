@@ -9,27 +9,23 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
+<div class="content">
   <header>
-    <h1>Welcome to Vibe Match</h1>
-    <nav>
-      <%= link_to 'Home', root_path %>
-      <%= link_to 'Search', new_search_path %>
-      <%= link_to 'Playlists', playlists_path %>
-      <%= link_to 'Login with Spotify', '/auth/spotify' %> <!-- Add login link if using Spotify auth -->
-    </nav>
-  </header>
-
-  <main>
-    <section>
-      <h2>How It Works</h2>
-      <p>Vibe Match helps you find music that matches the vibe of your favorite songs. Just input a song, and we'll generate a playlist of 20 songs that match its vibe.</p>
-    </section>
-
+  <div class="video-section">
+  <video autoplay muted loop>
+    <#source src="<#%= asset_path('background-video.mp4') %>" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+    <h1>VibeMatch: <strong>Curate your</strong> perfect <strong>playlist</strong>!</h1>
+    <p>VibeMatch creates custom playlists that perfectly match the vibe of any song you choose.</p>
+    <a class="btn btn-flat" href="#">Apply now</a>
+  </div>
     <section>
       <h2>Get Started</h2>
       <%= form_with url: new_search_path, method: :get, local: true do %>
         <%= label_tag :song, 'Enter a Song:' %>
-        <%= text_field_tag :song, nil, placeholder: 'e.g., Shape of You' %>
+        <%= text_field_tag :song, nil, placeholder: 'e.g., Come as you are' %>
         <%= submit_tag 'Generate Playlist' %>
       <% end %>
     </section>

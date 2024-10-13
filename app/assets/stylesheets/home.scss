@@ -1,3 +1,7 @@
+@import 'variables';
+
+
+
 html, body {
   height: 100%;
   margin: 0;
@@ -28,7 +32,6 @@ footer {
   width: 100%;
 }
 
-@import 'variables';
 
 /* Navbar styles */
 .custom-navbar {
@@ -60,4 +63,67 @@ footer {
 .nav-link:hover {
   background-color: $button-hover-color;
   color: $text-color;
+}
+
+.banner {
+  position: relative;
+  height: 100vh; /* Adjust height as needed */
+  background-size: cover;
+  background-position: center;
+}
+
+.container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white; /* Change the text color as needed */
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5rem; /* Adjust the font size */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+p {
+  font-size: 1.25rem; /* Adjust the paragraph font size */
+  margin-bottom: 20px; /* Space below the paragraph */
+}
+
+.btn {
+  background-color: #007bff; /* Button background color */
+  color: white; /* Button text color */
+  padding: 10px 20px; /* Button padding */
+  border-radius: 5px; /* Rounded corners */
+  text-decoration: none; /* Remove underline from the link */
+}
+
+.btn:hover {
+  background-color: #0056b3; /* Darken button on hover */
+}
+
+.how-it-works,
+.purpose {
+  padding: 40px;
+  text-align: center; /* Center align text */
+  background-color: #f9f9f9; /* Light background for contrast */
+  margin: 20px 0; /* Space between sections */
+  border-radius: 8px; /* Rounded corners */
+}
+
+.how-it-works h2,
+.purpose h2 {
+  font-size: 2rem; /* Heading size */
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.how-it-works ol {
+  list-style: decimal; /* Numbered list */
+  padding-left: 20px; /* Space before the list */
+}
+
+.how-it-works li {
+  margin: 10px 0; /* Space between list items */
+  font-size: 1.2rem; /* Adjust font size */
 }

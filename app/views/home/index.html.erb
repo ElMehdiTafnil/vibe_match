@@ -9,27 +9,34 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-<div class="content">
-  <header>
-  <div class="video-section">
-  <video autoplay muted loop>
-    <#source src="<#%= asset_path('background-video.mp4') %>" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-</div>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://i.pinimg.com/564x/b6/13/24/b613244847d10986ecd722a6f64557ee.jpg);">
+  <div class="container">
     <h1>VibeMatch: <strong>Curate your</strong> perfect <strong>playlist</strong>!</h1>
     <p>VibeMatch creates custom playlists that perfectly match the vibe of any song you choose.</p>
-    <a class="btn btn-flat" href="#">Apply now</a>
   </div>
-    <section>
-      <h2>Get Started</h2>
-      <%= form_with url: new_search_path, method: :get, local: true do %>
-        <%= label_tag :song, 'Enter a Song:' %>
-        <%= text_field_tag :song, nil, placeholder: 'e.g., Come as you are' %>
-        <%= submit_tag 'Generate Playlist' %>
-      <% end %>
-    </section>
-  </main>
+</div>
+
+<div class="how-it-works">
+  <h2>How It Works</h2>
+  <ol>
+    <li><strong>🎶 Enter a Song:</strong> Just type in your favorite track! Whether it’s a nostalgic classic or the latest chart-topper, let your music preference be the starting point for an amazing journey.</li>
+    <li><strong>🚀 Generate Your Playlist:</strong> Hit that "Generate Playlist" button and watch the magic happen! In seconds, you’ll unlock a treasure trove of songs that resonate with the vibes of your chosen track.</li>
+    <li><strong>✨ Discover New Music:</strong> Get ready to groove! Our custom playlist will introduce you to fresh tunes and hidden gems that perfectly match the mood of your selected song. Whether you want to chill out, get pumped, or find the perfect background for your study session, we've got you covered!</li>
+  </ol>
+  <p>With VibeMatch, each song you love opens up a whole new world of music. Dive in and let the beats take you places!</p>
+</div>
+
+
+<div class="purpose">
+  <h2>Purpose of VibeMatch</h2>
+  <p>
+    VibeMatch aims to help music lovers discover new tracks that resonate with their taste. By analyzing your selected song, we create custom playlists tailored to your mood and preferences. Whether you’re looking to relax, party, or focus, VibeMatch has got you covered!
+  </p>
+</div>
+
+
+
+
 
   <footer>
     <p>&copy; <%= Time.now.year %> Vibe Match. All rights reserved.</p>
